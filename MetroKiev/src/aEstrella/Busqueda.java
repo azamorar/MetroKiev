@@ -17,7 +17,7 @@ public class Busqueda {
 	public static Estacion aEstrella(Estacion origen, Estacion destino) {
 		PriorityQueue<Estacion> listaCerrada = new PriorityQueue<Estacion>();
 	    PriorityQueue<Estacion> listaAbierta = new PriorityQueue<Estacion>();
-	    
+	    boolean nuevo;
 
 	    
 	    origen.f = origen.g + origen.getH(destino);
