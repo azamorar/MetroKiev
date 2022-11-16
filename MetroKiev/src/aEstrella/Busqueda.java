@@ -17,7 +17,6 @@ public class Busqueda {
 	public static Estacion aEstrella(Estacion origen, Estacion destino) {
 		PriorityQueue<Estacion> listaCerrada = new PriorityQueue<Estacion>();
 	    PriorityQueue<Estacion> listaAbierta = new PriorityQueue<Estacion>();
-	    boolean nuevo;
 
 	    
 	    origen.f = origen.g + origen.getH(destino);
@@ -33,8 +32,7 @@ public class Busqueda {
 	            double pesoTotal = n.g + c.distancia;
 	            
 
-	            if(!listaAbierta.contains(estacion) && !listaCerrada.contains(estacion)){
-	                estacion.raiz = n;
+	            if(!listaAbierta.contains(
 	                estacion.g = pesoTotal;
 	                estacion.f = estacion.g + estacion.getH(destino);
 	                listaAbierta.add(estacion);
@@ -67,7 +65,8 @@ public class Busqueda {
 		Estacion e = destino;
 
 	    if(e==null) return null;
-
+estacion) && !listaCerrada.contains(estacion)){
+	                estacion.raiz = n;
 	    ArrayList<Estacion> ids = new ArrayList<>();
 
 	    while(e.raiz != null){
